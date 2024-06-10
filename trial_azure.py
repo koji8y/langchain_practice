@@ -1,4 +1,6 @@
 # %%
+1
+# %%
 # from langchain.llms import OpenAI
 # from langchain_community.chat_models import ChatOpenAI
 from langchain_openai import AzureChatOpenAI
@@ -10,17 +12,24 @@ from dotenv import load_dotenv
 
 # %%
 try:
-    load_dotenv(Path(Path(__file__).parent, '.env'))
+    path = Path(Path(__file__).parent, '.env')
+    load_dotenv(path)
+    print(f'load {path}')
 except NameError:
     load_dotenv()
+    print(f'load .env')
 
-{'environemt variables': [var_name for var_name, value in os.environ.items() if "OPENAI" in var_name and value]}
+{'environemt variables': 
+    [var_name for var_name, value in os.environ.items()
+     if any(map(lambda kwd: kwd in var_name, ["OPENAI", "CHAT"])) and value]}
 # - 'OPENAI_API_KEY'
 # - 'AZURE_OPENAI_API_KEY'
 # - 'AZURE_OPENAI_ENDPOINT'
 # %%
 llm = AzureChatOpenAI(
     azure_deployment="my-gpt-4o",
+    model_name="gpt-4o",
+    openai_api_version="2024-05-13",
 )
 
 
