@@ -1,0 +1,7 @@
+# Sample for .env
+# - Copy this file to `.env` and edit to assign your value for each variable.
+OPENAI_API_KEY=sk-xxxxxx
+AZURE_OPENAI_API_KEY=11111111111111111111111111111111
+AZURE_OPENAI_ENDPOINT=https://aaaaaaaaaaaaaaaaa.openai.azure.com/
+OPENAI_API_VERSION=2024-05-13
+OPENAI_PROXY=http://uuuuuu:pppppppppp@proxy.example.com:8888/
