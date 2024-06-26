@@ -27,7 +27,7 @@ except NameError:
 # - 'AZURE_OPENAI_ENDPOINT'
 # %%
 llm = AzureChatOpenAI(
-    azure_deployment="my-gpt-4o",
+    #azure_deployment="my-gpt-4o",
     model_name="gpt-4o",
     openai_api_version="2024-05-13",
 )
